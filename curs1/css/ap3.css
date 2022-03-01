@@ -1,0 +1,19 @@
+div{
+    border: solid 5px red;
+    padding: 20px;
+}
+
+body > div{
+    background-color: brown;
+    color: #ffffff;
+}
+
+div > div{
+    background-color: burlywood;
+    color: yellow;
+}
+
+div > div > div{
+    background-color: cornflowerblue;
+    color: #000;
+}
