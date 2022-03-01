@@ -1,0 +1,44 @@
+
+a[title] {
+    color: green;
+    font-size: 15px;
+}
+a[href="https://www.link-academy.com"] {
+    color: rgb(255, 115, 0);
+    font-size: 45px;
+}
+
+a[href*="en&tl"] {
+    color: blue;
+}
+a[href*="fr&tl"] {
+    color: aqua;
+}
+a[href*="it&tl"] {
+    color: red;
+}
+
+a[href ^="https"]{
+    text-transform: uppercase;
+}
+a[href $=".com"]{
+    text-decoration: none;
+    font-style: italic;
+}
+a[data-info~="extern"]{
+    color: red;
+}
+a[data-info~="intern"]{
+    color: black;
+}
+p:empty{display: none;}
+
+ul#meniu{
+    list-style: none;
+}
+ul#meniu li{
+    display: inline-block;
+    padding: 5px 15px;
+}
+
+
