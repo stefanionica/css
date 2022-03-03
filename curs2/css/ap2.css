@@ -1,3 +1,16 @@
+#wrapper {
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 50px;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    10% {
+        transform: scale(1.1);
+    }
+}
+
 #heart {
     position: relative;
     width: 100px;
@@ -16,10 +29,25 @@
     border-radius: 50px 50px 0 0;
     transform: rotate(-45deg);
     transform-origin: 0 100%;
-    /* animation:pilsecolor 1s infinite; */
+    animation: demo 1s infinite;
 }
+
+@keyframes demo {
+    10% {background: #0058dd;}
+}
+
+
 #heart:after {
+    left: 0;
     transform: rotate(45deg);
     transform-origin: 100% 100%;
-    left: 0;
+   
 }
+
+span {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+
+
