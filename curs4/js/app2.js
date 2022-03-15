@@ -7,7 +7,7 @@ function showResponsive() {
             el.style.flexDirection = "row";
             
             Array.prototype.forEach.call(boxes, function (box) {
-                box.style.width = '300px';
+                box.style.width = '100%';
             });
         } else {
             el.style.flexDirection = "column";
