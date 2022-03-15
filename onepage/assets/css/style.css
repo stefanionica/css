@@ -175,7 +175,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--mycolor);
 }
 #header .logo img {
-  max-height: 160px;
+  max-height: 125px;
 }
 
 .scrolled-offset {
@@ -544,5 +544,8 @@ section {
   font-size: 60px;
   color: var(--mycolor);
 }
+
+
+
 
 
