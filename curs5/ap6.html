@@ -1,72 +1,49 @@
 <!DOCTYPE html>
 <html>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="./css/ap6.css">
+        <div class="heart">
+            <h1>Cu elementul canvas</h1>
+            <canvas id="myCanvas" width="300" height="300" style="border:10px solid #490f0f;">
+            </canvas>
+        </div>
+        <script>
+            window.onload = function () {
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        
+        ctx.rect(101, 100, 200, 200);
+        ctx.rotate(90 * Math.PI / 360);
+        ctx.fillStyle = "red";
+        ctx.fillRect(143, -70, 140, 140);
+        
+        ctx.beginPath();
+        ctx.arc(148, 0, 70, 0, 2 * Math.PI);
+        ctx.fillStyle = "red";
+        ctx.fill();
+        
+        ctx.beginPath();
+        ctx.arc(213, -64, 70, 0, 2 * Math.PI);
+        ctx.fillStyle = "red";
+        ctx.fill();
+            };
+           
+        </script> 
+    </head>
 
-<canvas id="myCanvas" width="300" height="300" style="border:1px solid #d3d3d3;">
-Your browser does not support the HTML5 canvas tag.</canvas>
-
-<
-<script>
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-
-ctx.beginPath();
-ctx.rect(50, 0, 150, 150);
-ctx.stroke();
-
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-ctx.beginPath();
-ctx.arc(100, 100, 50, 0, 2 * Math.PI);
-ctx.stroke();
-
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
-ctx.beginPath();
-ctx.arc(150, 100, 50, 0, 2 * Math.PI);
-ctx.stroke();
-</script> 
-
-</body>
-</html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/ap6.css">
-    <script>
-        window.onload = function () {
-            var canvas = document.getElementById("myCanvas");
-            var context = canvas.getContext("2d");
-
-            context.arc(200, 100, 70, 0, 2 * Math.PI, false);
-            context.fillStyle = "red";
-            context.fill();
+    
 
 
-            context.arc(100, 100, 70, 0, 2 * Math.PI, false);
-            context.fillStyle = "red";
-            context.fill();
 
-            context.rect(100, 100, 200, 200);
-            context.rotate(90 * Math.PI / 360);
-            context.fillStyle = "red";
-            context.fillRect(143, -70, 140, 140);
 
-        };
-    </script>
-</head>
 
 <body>
-    <div class="heart">
-        <h1>Cu elementul canvas</h1>
-        <canvas id="myCanvas" width="300" height="270"></canvas>
-    </div>
+    
+    
     <div class="heart">
         <h1> Cu elementul svg</h1>
         <div id="svg">
@@ -89,4 +66,4 @@ ctx.stroke();
 
 </body>
 
-</html> -->
+</html> 
