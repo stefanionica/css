@@ -7,23 +7,23 @@ const cleanCSS = require('gulp-clean-css');
 var minify = require('gulp-minify');
 var concat = require('gulp-concat');
 // ca sa transformam fisiere sass/scss in fisiere css: gulp sass
-gulp.task("sass", function () {
+ function sasstocss() {
   return gulp
     .src("dev/scss/style.scss")
     .pipe(sass().on("error", sass.logError))
-    .pipe(gulp.dest("assets/css"));
-});
+    .pipe(gulp.dest("dev/css"));
+}
 
 // ca sa optimizam fisierele css : gulp css
-gulp.task("css", () => {
+function csstomin () {
   return gulp
-    .src("assets/css/*.css")
+    .src("dev/css/style.css")
 
     .pipe(
       cleanCSS({ debug: true }, (details) => {
         console.log(`${details.name}: ${details.stats.originalSize}`);
         console.log(`${details.name}: ${details.stats.minifiedSize}`);
-      })
+      }),
     )
     .pipe(
       rename({
@@ -31,22 +31,28 @@ gulp.task("css", () => {
       })
     )
     .pipe(gulp.dest("assets/css/"));
-});
-// ca sa optimizam fisierele js : gulp pack-js 
-gulp.task('pack-js', function () {    
-  return gulp.src(['dev/js/*.js'])
+}
+// ca sa optimizam fisierele js : gulp css
+function jstomin(){    
+  return gulp.src(['dev/js/main.js'])
       .pipe(concat('custom.js'))
-      .pipe(gulp.dest('assets/js'))
+      .pipe(gulp.dest('dev/js'))
       .pipe(minify())
       .pipe(gulp.dest('assets/js'));
-});
+}
 
 // genereaza in mod automat fisierul css la modificarile diin fisierele scss
-gulp.task('sass:watch', function () {
-  gulp.watch('dev/scss/*.scss', ['sass']);
-  gulp.watch('assets/css/*.css', ['css']);
-  gulp.watch('dev/js/*.js', ['pack-js']);
-});
+function watch_scss() {
+  return gulp.watch(['dev/scss/style.scss'], gulp.series(sasstocss,csstomin));
+}
+function watch_js() {
+  return gulp.watch(['dev/js/main.js'], gulp.series(jstomin));
+}
+
+//ca sa rulam automat optimizare css gulp buildcss
+exports.buildcss = gulp.series(watch_scss);
+//ca sa rulam automat optimizare js gulp buildjs
+exports.buildjs = gulp.series(watch_js);
 
 // optional pentru imagini : gulp images
 /*
